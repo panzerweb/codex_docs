@@ -1,6 +1,7 @@
 import AboutView from '@/features/about/view/AboutView.vue'
 import BlogsView from '@/features/blogs/view/BlogsView.vue'
 import HomeView from '@/features/home/view/HomeView.vue'
+import OverviewView from '@/features/home/view/OverviewView.vue'
 import ReleasesView from '@/features/releases/view/ReleasesView.vue'
 import { createRouter, createWebHashHistory } from 'vue-router'
 
@@ -10,6 +11,10 @@ const router = createRouter({
     {
       path: '/',
       component: HomeView,
+    },
+    {
+      path: '/overview',
+      component: OverviewView,
     },
     {
       path: '/blogs',
