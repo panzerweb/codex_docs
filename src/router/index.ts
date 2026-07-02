@@ -1,32 +1,21 @@
-import AboutView from '@/features/about/view/AboutView.vue'
-import BlogsView from '@/features/blogs/view/BlogsView.vue'
-import HomeView from '@/features/home/view/HomeView.vue'
-import OverviewView from '@/features/home/view/OverviewView.vue'
-import ReleasesView from '@/features/releases/view/ReleasesView.vue'
 import { createRouter, createWebHashHistory } from 'vue-router'
+import { homeRoutes } from '@/features/home'
+import { blogRoutes } from '@/features/blogs'
+import { aboutRoutes } from '@/features/about'
+import { releaseRoutes } from '@/features/releases'
+import UnauthorizedView from '@/core/components/UnauthorizedView.vue'
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
+    ...homeRoutes,
+    ...blogRoutes,
+    ...aboutRoutes,
+    ...releaseRoutes,
+    // Detect sa system if unauthorized ang user if naga require ug auth ang isa ka page
     {
-      path: '/',
-      component: HomeView,
-    },
-    {
-      path: '/overview',
-      component: OverviewView,
-    },
-    {
-      path: '/blogs',
-      component: BlogsView,
-    },
-    {
-      path: '/about',
-      component: AboutView,
-    },
-    {
-      path: '/releases',
-      component: ReleasesView,
+      path: '/unauthorized',
+      component: UnauthorizedView,
     },
   ],
 })
