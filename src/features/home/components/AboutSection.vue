@@ -1,7 +1,19 @@
 <script lang="ts" setup>
 import CodexCover from '@/assets/images/codex_cover.jpg'
 import StatsCard from './cards/StatsCard.vue'
+
+// From Colors
+import * as Colors from '@/core/styles/colors.ts'
+// From Typography
+import * as Typography from '@/core/styles/typography.ts'
 </script>
+
+<!--
+
+  This section is different from the about feature.
+  This section is exclusive for the HomeView only
+
+-->
 
 <template>
   <section class="about py-24">
@@ -26,11 +38,12 @@ import StatsCard from './cards/StatsCard.vue'
         <div class="space-y-6">
           <div class="badge badge-secondary badge-outline">About IC-LSG Codex</div>
 
-          <h2 class="text-4xl font-bold leading-tight">
-            Empowering student developers to build solutions for the university.
+          <h2 :class="Typography.sectionTitle">
+            <span :class="Colors.textHighlight">Empowering</span> student developers to build
+            solutions for the university.
           </h2>
 
-          <p class="text-base-content/80 leading-8">
+          <p :class="[Typography.body, Colors.textSecondary]">
             IC-LSG Codex is the official student development team of Davao del Norte State College
             under the Institute of Computing Local Student Government (IC-LSG). Composed of student
             developers, UI/UX designers, and multimedia artists, the organization collaborates to
@@ -38,7 +51,7 @@ import StatsCard from './cards/StatsCard.vue'
             administrative initiatives.
           </p>
 
-          <p class="text-base-content/80 leading-8">
+          <p :class="[Typography.body, Colors.textSecondary]">
             Established in 2024, Codex was founded during the transition from the Institute of
             Computing Student Association (ICSA) to the Institute of Computing Local Student
             Government (IC-LSG). Since then, it has served as a platform for collaboration,
